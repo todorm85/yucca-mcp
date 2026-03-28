@@ -237,7 +237,7 @@ function splitReplyChain(text) {
 
 server.tool(
   "read_eml",
-  "Parse an .eml email file and return the complete email chain as structured text with inline images. Each message in the reply chain is clearly delimited. Images are labelled with sequential indices and context snippets so the LLM can reason about them. Returns interleaved text + image content blocks for full multimodal comprehension in a single tool call.",
+  "Parse an .eml email file and return the complete email chain as structured text with inline images. Does not include attachments! Each message in the reply chain is clearly delimited. Images are labelled with sequential indices and context snippets so the LLM can reason about them. Returns interleaved text + image content blocks for full multimodal comprehension in a single tool call.",
   {
     path: z.string().describe("Absolute path to the .eml file"),
   },
