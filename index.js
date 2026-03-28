@@ -378,6 +378,35 @@ function runProcess(cmd, args) {
   });
 }
 
+/**
+ * Check that Python is on PATH and pymupdf is importable.
+ * Returns null if OK, or an error string with install instructions.
+ */
+async function checkPythonDeps() {
+  // Check python exists
+  try {
+    await runProcess("python", ["--version"]);
+  } catch {
+    return (
+      "Python is not found on PATH.\n" +
+      "Install Python 3.8+ from https://www.python.org/downloads/ " +
+      "and ensure it is added to PATH."
+    );
+  }
+  // Check pymupdf is importable
+  try {
+    await runProcess("python", ["-c", "import pymupdf"]);
+  } catch (err) {
+    const detail = (err.stderr || "").trim();
+    return (
+      "Python package 'pymupdf' is not installed.\n" +
+      "Install it with:  pip install pymupdf\n" +
+      (detail ? `Detail: ${detail}` : "")
+    );
+  }
+  return null;
+}
+
 server.tool(
   "read_pdf",
   "Render each page of a PDF file as a high-quality PNG image and return all pages as visual content. Uses PyMuPDF for pixel-perfect rendering. Ideal for PDFs with complex layouts, charts, or forms where text extraction loses formatting. Returns one image content block per page.",
@@ -386,6 +415,12 @@ server.tool(
     dpi: z.number().optional().describe("Resolution in DPI (default 200). Use 150 for faster/smaller, 300 for print quality."),
   },
   async ({ path: pdfPath, dpi }) => {
+    // Preflight: verify Python + pymupdf before doing any file work
+    const depError = await checkPythonDeps();
+    if (depError) {
+      return { content: [{ type: "text", text: depError }], isError: true };
+    }
+
     const resolved = isAbsolute(pdfPath) ? pdfPath : resolve(pdfPath);
     const renderDpi = dpi || 200;
 
@@ -457,6 +492,17 @@ server.tool(
     }
   }
 );
+
+// ─── Startup dependency check ─────────────────────────────────────────────────
+// Warn immediately if optional dependencies are missing so the issue is visible
+// in the MCP client's output panel rather than surfacing only on first tool call.
+checkPythonDeps().then((err) => {
+  if (err) {
+    process.stderr.write(
+      `[file-reader-mcp] WARNING: read_pdf tool will not work.\n${err}\n`
+    );
+  }
+});
 
 // ─── Transport ────────────────────────────────────────────────────────────────
 
