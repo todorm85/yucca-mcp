@@ -1,0 +1,9 @@
+{
+    "servers": {
+        "image-reader": {
+            "type": "stdio",
+            "command": "node",
+            "args": ["c:/todor/GDrive/dev/tools/mcp/file-reader-mcp/index.js"]
+        }
+    }
+}

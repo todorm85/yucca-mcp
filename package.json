@@ -1,0 +1,10 @@
+{
+  "name": "image-reader-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that reads workspace images and returns them as visual content",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
