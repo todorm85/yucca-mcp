@@ -19,7 +19,7 @@ const MIME_TYPES = {
 };
 
 const server = new McpServer({
-  name: "image-reader",
+  name: "file-reader",
   version: "1.0.0",
 });
 

@@ -1,7 +1,7 @@
 {
-  "name": "image-reader-mcp",
+  "name": "file-reader-mcp",
   "version": "1.0.0",
-  "description": "MCP server that reads workspace images and returns them as visual content",
+  "description": "MCP server that reads files (images, emails, PDFs) and returns them as visual or structured content",
   "main": "index.js",
   "type": "module",
   "dependencies": {
