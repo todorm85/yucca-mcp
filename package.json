@@ -1,9 +1,11 @@
 {
-  "name": "file-reader-mcp",
+  "name": "yucca-mcp",
   "version": "1.0.0",
-  "description": "MCP server that reads files (images, emails, PDFs, Excel spreadsheets) and returns them as visual or structured content",
+  "description": "An accuracy-focused MCP server for local file analysis. Reads emails, PDFs, spreadsheets, and images into LLM-ready content for AI-assisted analysis.",
   "main": "index.js",
   "type": "module",
+  "license": "MIT",
+  "keywords": ["mcp", "llm", "ai", "file-reader", "eml", "pdf", "xlsx", "analysis"],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "pdf-to-img": "^5.0.0",
