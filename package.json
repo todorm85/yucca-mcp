@@ -6,6 +6,7 @@
   "type": "module",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
+    "pdf-to-img": "^5.0.0",
     "read-excel-file": "^7.0.3"
   }
 }
