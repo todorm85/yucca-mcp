@@ -2,7 +2,7 @@
 
 An accuracy-focused MCP server for local file analysis. Most file-reading MCP tools optimize for token efficiency — yucca-mcp optimizes for **giving the LLM the most accurate representation of your files**, so analysis results are reliable and nothing is missed.
 
-See [overview](/overview.html)
+See [overview](https://todorm85.github.io/yucca-mcp/overview.html)
 
 Turns emails, PDFs, spreadsheets, and images into LLM-ready content. All-in-one file reader, not a file converter.
 
