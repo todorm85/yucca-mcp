@@ -11,8 +11,6 @@
 </style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="overview" tabindex="-1" title="Toggle overview view (o)">Toggle overview view</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="1" style="--paginate:true;--theme:default;" data-marpit-pagination-total="21">
 <h1 id="%F0%9F%8C%B5-yucca-mcp"><img class="emoji" draggable="false" alt="🌵" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/1f335.svg" data-marp-twemoji=""/> YUCCA-MCP</h1>
 <p><strong>Accuracy-focused MCP server for local file analysis</strong></p>
-<p>Most file-reading tools optimize for token efficiency.<br />
-yucca-mcp optimizes for <strong>giving the LLM the most accurate representation of your files</strong> — so nothing is missed.</p>
 <p><a href="https://github.com/todorm85/yucca-mcp">https://github.com/todorm85/yucca-mcp</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--theme:default;" data-marpit-pagination-total="21">
@@ -116,10 +114,11 @@ yucca-mcp optimizes for <strong>giving the LLM the most accurate representation 
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--theme:default;" data-marpit-pagination-total="21">
 <h2 id="%F0%9F%8C%B5-yucca-mcp-1"><img class="emoji" draggable="false" alt="🌵" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/1f335.svg" data-marp-twemoji=""/> yucca-mcp</h2>
 <blockquote>
-<p><em>&quot;All-in-one file reader for MCP — not a file converter.&quot;</em></p>
+<p><em>&quot;Accuracy focused file reader for MCP — not a file converter.&quot;</em></p>
 </blockquote>
-<p>Translates files directly into native MCP output (text + images).<br />
-No intermediate files. Designed for the analytical phase.</p>
+<p>Most file-reading tools optimize for token efficiency.<br />
+YUCCA-MCP optimizes for <strong>giving the LLM the most accurate and full representation of your files</strong> — so nothing is missed.<br />
+Designed for the analytical phase where every bit of information you feed the model matters.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--theme:default;" data-marpit-pagination-total="21">
 <h3 id="how-it-handles-each-format">How it handles each format</h3>
@@ -241,10 +240,11 @@ No intermediate files. Designed for the analytical phase.</p>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--theme:default;" data-marpit-pagination-total="21">
 <h2 id="%E2%9A%96%EF%B8%8F-honest-trade-offs"><img class="emoji" draggable="false" alt="⚖️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2696.svg" data-marp-twemoji=""/> Honest trade-offs</h2>
 <ul>
+<li>Not a silver bullet all in one solution</li>
+<li>YUCCA mcp tools are suitable for use <strong>after</strong> data gathering/research — it's about analyzing and iterating over what has already been scoped and mostly relevant for the task at hand.</li>
+<li>Small scale or end phases tasks of large projects where you want quick, iterative, manual control over context.</li>
 <li>PDF-as-image <strong>uses more tokens</strong> than text extraction</li>
 <li>.eml parsing focuses on body + inline images — <strong>attachments not yet processed</strong></li>
-<li>This workflow starts <strong>after</strong> data gathering — it's about analyzing what you already have</li>
-<li>Small-scale workloads. Not designed for processing large volumes of data. Not for research, focus is on analysis.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="19" style="--paginate:true;--theme:default;" data-marpit-pagination-total="21">
